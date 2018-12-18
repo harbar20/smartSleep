@@ -28,7 +28,9 @@ def minutesToTime(minutes):
     extraMinutes = minutes % 60
     hours = int((minutes - extraMinutes) / 60)
 
-    return time(hours, extraMinutes)
+    newtime = time(hours, extraMinutes)
+
+    return newtime
 
 def strTimeToTime(strtime):
     #converts a given time in string and converts it to a time object
@@ -73,9 +75,15 @@ def subTime(timeOne, timeTwo):
     minutes1 = timeOne.minute
     minutes2 = timeTwo.minute
 
+    print("Hours: ", hours1, " ", hours2)
+    print("Minutes: ", minutes1, " ", minutes2)
+
     #subtracting the final hours and minutes
     finalHours = (hours1 - hours2) % 24
     finalMinutes = (minutes1 - minutes2) % 60
+
+    print("Final hours: ", finalHours)
+    print("Final minutes: ", finalMinutes)
 
     #returning the new time class
     return time(finalHours, finalMinutes)
