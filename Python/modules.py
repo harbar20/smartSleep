@@ -18,12 +18,12 @@ def isFemale(gender):
     return gender == 'f' or gender == 'F'
 
 def timeToMinutes(time):
-    #converting hours to minutes (24 hour clock)
+    #converts given time to minutes
 
-    return int((time.hours() * 60) + time.minutes())
+    return (time.hour * 60) + time.minute
 
 def minutesToTime(minutes):
-#converts given minutes to a time
+    #converts given minutes to a time
 
     extraMinutes = minutes % 60
     hours = int((minutes - extraMinutes) / 60)
@@ -66,7 +66,7 @@ def addTime(timeOne, timeTwo):
 
 def subTime(timeOne, timeTwo):
     #subtracts 2 given times in datetime.time() datatype
-
+    """
     #finding the hours of the time for subtraction
     hours1 = timeOne.hour
     hours2 = timeTwo.hour
@@ -87,3 +87,28 @@ def subTime(timeOne, timeTwo):
 
     #returning the new time class
     return time(finalHours, finalMinutes)
+    """
+    #converting times to minutes
+    minutes1 = timeToMinutes(timeOne)
+    minutes2 = timeToMinutes(timeTwo)
+
+    #converting minutes to decimals in relation to times
+    decimal1 = minutes1 / 60
+    decimal2 = minutes2 / 60
+
+    #subtracting decimals to be converted back to minutes, then time
+    decimalDif = decimal1 - decimal2
+
+    #checking if the time will be in the previous day, or in the same day
+    if decimalDif < 0:
+        decimalDif = 24 + decimalDif
+
+    #converting decimalDif back to minutes
+    minutesDif = int(decimalDif * 60)
+
+    #converting minutesDif back to time
+    timeDif = minutesToTime(minutesDif)
+
+    #returning the time
+    return timeDif
+    

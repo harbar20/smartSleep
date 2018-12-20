@@ -75,13 +75,11 @@ sleepTimeChoiceTime = sleepTimesList[sleepTimeChoiceInt - 1]
 #happiness level
 happiness = int(input("How are you feeling today (scale of 1-5)? "))
 
-#actually adjusts sleep based on happiness level
+#actually adjusts sleep based on happiness level. Target happiness is 3
 if happiness < 3:
     sleepTimeMultiplier = 3 - happiness
     multiplierTime = minutesToTime(sleepTimeMultiplier * 44)
-    print(multiplierTime)
     realSleepTime = subTime(sleepTimeChoiceTime, multiplierTime)
-    print(realSleepTime)
 else:
     realSleepTime = sleepTimeChoiceTime
 
