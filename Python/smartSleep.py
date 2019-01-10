@@ -8,7 +8,7 @@ random = timeToMinutes(time(6))
 
 #parameters to decide optimal sleep
 #gender of user. we can't handle LGBTQ+ yet
-gender = raw_input("Gender (M or F): ")
+gender = input("Gender (M or F): ")
 
 #age of user. we can't handle children yet
 age = int(input("Age: "))
@@ -19,7 +19,7 @@ elif age < 0:
     print("Invalid age. Reload the page and try again.")
 
 #optimal wake-up time of user. if invalid, return an error
-wakeTime = raw_input("What time do you want to wake up? ")
+wakeTime = input("What time do you want to wake up? ")
 wakeTime = strTimeToTime(wakeTime)
 
 sleepTimesList = []
