@@ -3,10 +3,11 @@
 
 from datetime import time
 from modules import *
-from errors import *
+
+random = timeToMinutes(time(6))
 
 #parameters to decide optimal sleep
-#gender of user. we can't handle non-binary yet
+#gender of user. we can't handle LGBTQ+ yet
 gender = input("Gender (M or F): ")
 
 #age of user. we can't handle children yet
@@ -14,10 +15,8 @@ age = int(input("Age: "))
 #catching errors for age. if less than 10, age is not valid.
 if age < 10 and age > 0:
     print("Age is too young.")
-    raise ageError(age)
 elif age < 0:
     print("Invalid age. Reload the page and try again.")
-    raise ageError(age)
 
 #optimal wake-up time of user. if invalid, return an error
 wakeTime = input("What time do you want to wake up? ")
