@@ -114,12 +114,11 @@ function storeWakeTime() {
 var sleepTimesList = [];
 
 function timesCalc() {
-	let age = localStorage.getItem("age");
-	let wakeTime = localStorage.getItem("waketime");
-	let gender = localStorage.getItem("gender");
-		
-		if (isKid(age)) {
-			let kidWakeTime = subTime(wakeTime, "3:00");
+let age = "15";
+let wakeTime = "8:00";
+let gender = "m";
+    if (isKid(age)) {
+		let kidWakeTime = subTime(wakeTime, "3:00");
 
 		for (i = 0; i < 6; i++) {
 			let kidMinutes = minutesToTime(90 * (i + 1));
@@ -160,13 +159,14 @@ function timesCalc() {
 			sleepTimesList.push(seniorSleep);
 		}
     }
-    document.getElementById("choice1").innerHTML = sleepTimesList.slice(0);
+    document.getElementById("choice1").innerHTML = sleepTimesList[0];
     document.getElementById("choice2").innerHTML = sleepTimesList.slice(1);
     document.getElementById("choice3").innerHTML = sleepTimesList.slice(2);
     document.getElementById("choice4").innerHTML = sleepTimesList.slice(3);
     document.getElementById("choice5").innerHTML = sleepTimesList.slice(4);
     document.getElementById("choice6").innerHTML = sleepTimesList.slice(5);
     console.log(sleepTimesList.slice(0));
+    console.log("hello");
 }
 
 function bedTimeChoice(choice) {
