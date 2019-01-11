@@ -19,7 +19,7 @@ elif age < 0:
     print("Invalid age. Reload the page and try again.")
 
 #optimal wake-up time of user. if invalid, return an error
-wakeTime = input("What time do you want to wake up? ")
+wakeTime = raw_input("What time do you want to wake up? ")
 wakeTime = strTimeToTime(wakeTime)
 
 sleepTimesList = []
