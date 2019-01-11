@@ -114,13 +114,14 @@ function storeWakeTime() {
 var sleepTimesList = [];
 
 function timesCalc() {
-let age = localStorage.getItem("age");
-let wakeTime = localStorage.getItem("waketime");
-let gender = localStorage.getItem("gender");
-    if (isKid(age)) {
-		let kidWakeTime = subTime(wakeTime, "3:00");
+	let age = localStorage.getItem("age");
+	let wakeTime = localStorage.getItem("waketime");
+	let gender = localStorage.getItem("gender");
+		
+		if (isKid(age)) {
+			let kidWakeTime = subTime(wakeTime, "3:00");
 
-		for (let i = 0; i < 6; i++) {
+		for (i = 0; i < 6; i++) {
 			let kidMinutes = minutesToTime(90 * (i + 1));
 			let kidSleep = subTime(kidWakeTime, kidMinutes);
 
@@ -133,7 +134,7 @@ let gender = localStorage.getItem("gender");
 	}
 
 	else if (isAdult(age)) {
-		for (let i = 0; i < 6; i++) {
+		for (i = 0; i < 6; i++) {
 			let adultMinutes = minutesToTIme(90 * (i + 1));
 			let adultSleep =  subTime(wakeTime, adultMinutes);
 
@@ -148,7 +149,7 @@ let gender = localStorage.getItem("gender");
 	else if (isSenior(age)) {
 		let seniorWakeTime = addTime(wakeTime, "0:30");
 
-		for (let i = 0; i < 6; i++) {
+		for (i = 0; i < 6; i++) {
 			let seniorMinutes = minutesToTime(90 * (i + 1));
 			let seniorSleep = subTime(seniorWakeTime, adultMinutes);
 
